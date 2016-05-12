@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/app.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="public/js/app.js"></script>
+    <script src="public/js/app.Ctrl.js"></script>
+    <script src="public/js/app.Service.js"></script>
+</head>
+<body ng-controller="App.Ctrl">
+
+    <!-- modal -->
+    <div ng-style="modal" class="modal">
+        <div class="modal__content">
+            <p>Play against the computer or a person?
+                <span>
+                    <button type="button" class="btn btn__opponent btn__default" ng-style="colorBtn1" ng-click="selectOpponent('computer'); colorIcon(1)">
+                        <i class="fa fa-laptop fa-2x"></i>
+                    </button>
+                    <button type="button" class="btn btn__opponent" ng-style="colorBtn2" ng-click="selectOpponent('user2'); colorIcon(2)">
+                        <i class="fa fa-user fa-2x"></i>
+                    </button>
+                </span>
+            </p>
+            <p>X or O?
+                <span>
+                    <button type="button" class="btn btn__XO btn__default" ng-style="colorBtn3" ng-click="selectXorO('X'); colorIcon(3)">
+                        <b>X</b>
+                    </button>
+                    <button type="button" class="btn btn__XO" ng-style="colorBtn4" ng-click="selectXorO('O'); colorIcon(4)">
+                        <b>O</b>
+                    </button>
+                </span>
+            </p>
+            <p>Go first?
+                <span>
+                    <button type="button" class="btn btn__order btn__default" ng-style="colorBtn5" ng-click="selectOrder('yes'); colorIcon(5)">
+                        <b>1<span class="btn__order_sm">st</span></b>
+                    </button>
+                    <button type="button" class="btn btn__order" ng-style="colorBtn6" ng-click="selectOrder('no'); colorIcon(6)">
+                        <b>2<span class="btn__order_sm">nd</span></b>
+                    </button>
+                </span>
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary btn__start" ng-click="playerSetup()">
+                    <b>Let's play!</b>
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <!-- display messages -->
+    <div class=msgBox>
+        <p class="msgBox__content">{{msg}}</p>
+    </div>
+
+    <!-- board -->
+    <div class="board">
+        <div ng-repeat="square in board">
+            <div class="board__square" ng-click="updateUserMove(square.index)">
+                <p class="board__square__content">{{ board[square.index].mark }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!--start over -->
+    <button type="button" class="btn btn-primary btn__startOver" ng-click="reset()">
+        <b>Start Over?</b>
+    </button>
+
+</body>
+</html>
