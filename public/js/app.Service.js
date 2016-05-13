@@ -19,7 +19,7 @@ App.service('serviceNextMove', function() {
         },
     };
 
-    this.mainHandler = function(playerLetter, n, opponent = 'computer') {
+    this.mainHandler = function(playerLetter, n, opponent) {
         this._resetErrorCheck();
         this._checkForError(n, 1);
         if(result.errorCheck.error)
