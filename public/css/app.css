@@ -1,0 +1,152 @@
+/* Body */
+
+body {
+    font: 25px Arial, Sans-Serif;
+    text-align: center;
+}
+
+/* Modal / Modal Content / Modal Animation*/
+
+.modal {
+    display: block;
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+        top: 0;
+        left: 0;
+    width: 100%;
+    z-index: 1;
+
+}
+.modal__content {
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: .4s;
+    background-color: #fff;
+    border-radius:25px;
+    box-shadow: inset 0 0 6px #000;
+    color: #000;
+    margin: 200px auto 0 auto;
+    padding: 5%;
+    text-align: left;
+    width: 80%;
+        max-width: 650px;
+}
+.modal__content span {
+    display: inline-block;
+    white-space: nowrap;
+}
+@-webkit-keyframes animatetop {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+@keyframes animatetop {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+/* Board, Board Squares, and Content */
+
+.board {
+    font: 20px Arial, Sans-Serif;
+    overflow: auto;
+    margin: 0 auto;
+    width: 80%;
+        max-width: 650px;
+}
+.board__square {
+    background-color: #ccc;
+    border-radius:25px;
+    float: left;
+    margin: 1.66%;
+    width: 30%;
+    padding-bottom: 33.3%;
+    position: relative;
+}
+.board__square__content {
+    color: #fff;
+    font-size: 19.2vw;
+    height: 80%;
+    margin: 10%;
+    position: absolute;
+    text-align: center;
+    width: 80%;
+}
+
+/* MsgBox and Content */
+
+.msgBox {
+    min-height: 100px;
+    position: relative;
+}
+.msgBox__content {
+    bottom: 15px;
+    color: red;
+    font-size: 35px;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+/* Buttons */
+
+button {
+    background: none;
+    border: none;
+    color: #999;
+}
+button:hover, button:active, button:focus  {
+    color: blue !important;
+    outline: none !important;
+    border: none;
+    background: none;
+}
+.btn:active, .btn:focus {
+    box-shadow: none;
+}
+.btn__default {
+    color: blue;
+}
+.btn__XO {
+    font-size: 28px;
+    margin: 0 0 0 9px;
+}
+.btn__order {
+    font-size: 24px;
+}
+.btn__order_sm {
+    font-size: 14px;
+    position: relative;
+    bottom: 8px;
+}
+.btn-primary {
+    font-size: 22px;
+    color: #fff;
+}
+.btn__start{
+    margin-top: 5px;
+}
+.btn__startOver {
+    margin-top:30px;
+}
+
+/*------media------*/
+
+@media screen and (min-width: 812px) {
+    .board__square__content {
+        font-size: 155px;
+    }
+    .btn_startOver {
+        font-size:25px;
+    }
+    .msgBox__content {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .modal__content {
+        margin: 25% auto 0 auto;
+}
